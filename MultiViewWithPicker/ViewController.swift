@@ -55,6 +55,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         pickerOptions.insert(newRow!, at: row+1)
         
+        picker.selectRow(row+1, inComponent: 0, animated: true)
         picker.reloadAllComponents()
         
     }
