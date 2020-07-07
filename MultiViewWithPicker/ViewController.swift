@@ -12,7 +12,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     @IBOutlet weak var picker: UIPickerView!
     
-    private let pickerOptions = [
+    @IBOutlet weak var inputField: UITextField!
+    
+    private var pickerOptions = [
         "Thing One", "Thing Two", "Thing Three"]
     
     @IBAction func onSelectButtonPressed(_ sender: UIButton) {
@@ -34,6 +36,28 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func onReplaceButonPressed(_ sender: UIButton) {
+        let newRow = (inputField.text == nil ? " " : inputField.text)
+        let row = picker.selectedRow(inComponent: 0)
+        let selected = pickerOptions[row]
+        
+        if let i = pickerOptions.firstIndex(of: selected) {
+            pickerOptions[i] = newRow!
+        }
+        
+        picker.reloadAllComponents()
+    }
+    
+    @IBAction func onInsertButtonPressed(_ sender: UIButton) {
+        
+        let newRow = (inputField.text == nil ? " " : inputField.text)
+        let row = picker.selectedRow(inComponent: 0)
+        
+        pickerOptions.insert(newRow!, at: row+1)
+        
+        picker.reloadAllComponents()
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

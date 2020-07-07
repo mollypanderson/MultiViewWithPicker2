@@ -31,6 +31,9 @@
                                 <state key="normal" title="Insert">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="onInsertButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VeA-Ia-9Uo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBZ-9P-6ke">
                                 <rect key="frame" x="43" y="338" width="234" height="57"/>
@@ -59,6 +62,9 @@
                                 <state key="normal" title="Replace">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="onReplaceButonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j16-Df-JOy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -87,6 +93,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="inputField" destination="I5E-ay-Ljo" id="M4p-Lw-RwN"/>
                         <outlet property="picker" destination="PLp-3P-04K" id="UMf-JP-s41"/>
                     </connections>
                 </viewController>
